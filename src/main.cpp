@@ -14,7 +14,7 @@ class $modify(MyMenuLayer, MenuLayer) {
     bool init() {
         if (!MenuLayer::init()) return false;
 	auto btn = CCMenuItemSpriteExtra::create(
-            CCSprite::createWithSpriteFrameName("GJ_playBtn2_001"),
+            CCSprite::createWithSpriteFrameName("GJ_playBtn2_001.png"),
             this, menu_selector(MyMenuLayer::onMyLayer)
         );
 
