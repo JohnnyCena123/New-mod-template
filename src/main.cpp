@@ -1,9 +1,3 @@
-// clangd automatically adds those when i use tab to autocomplete so who am i to argue
-#include "Geode/binding/CCMenuItemSpriteExtra.hpp"
-#include "Geode/binding/GJAccountManager.hpp"
-#include "Geode/cocos/cocoa/CCObject.h"
-#include "Geode/utils/cocos.hpp"
-
 #include "MyLayer.hpp"
 
 using namespace cocos2d;
