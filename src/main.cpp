@@ -7,9 +7,10 @@ class $modify(MyMenuLayer, MenuLayer) {
 
     bool init() {
         if (!MenuLayer::init()) return false;
+        auto spr = CCSprite::createWithSpriteFrameName("GJ_playBtn2_001.png");
+	spr->setScale(.65f);
 	auto btn = CCMenuItemSpriteExtra::create(
-            CCSprite::createWithSpriteFrameName("GJ_playBtn2_001.png"),
-            this, menu_selector(MyMenuLayer::onMyLayer)
+            spr, this, menu_selector(MyMenuLayer::onMyLayer)
         );
 
         auto menu = this->getChildByID("bottom-menu");
