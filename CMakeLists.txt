@@ -13,6 +13,7 @@ project(Template VERSION 1.0.0)
 # Set up the mod binary
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
+    src/MyLayer.cpp
     # Add any extra C++ source files here
 )
 
