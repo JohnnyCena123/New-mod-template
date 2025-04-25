@@ -59,7 +59,7 @@ bool MyLayer::init() {
 
 	m_backBtn = CCMenuItemSpriteExtra::create(
 		CCSprite::createWithSpriteFrameName(
-			fmt::format("GJ_arrow_0{}_001.png", rand() % 3).c_str()
+			fmt::format("GJ_arrow_0{}_001.png", rand() % 3 + 1).c_str()
 		),
 		this, menu_selector(MyLayer::onBack)
 	);
