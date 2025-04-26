@@ -1,7 +1,7 @@
 #pragma once
 #include <Geode/Geode.hpp>
 
-using namespace geode::prelude;
+using namespace prelude;
 
 class MyLayer : public CCLayer {
 protected:
@@ -9,8 +9,8 @@ protected:
 
 	CCLayer* m_contentLayer;
 
-	geode::ScrollLayer* m_scrollLayer;
-	geode::Scrollbar* m_scrollbar;
+	ScrollLayer* m_scrollLayer;
+	Scrollbar* m_scrollbar;
 
 	CCMenu* m_btnMenu;
 	CCMenuItemSpriteExtra* m_backBtn;
