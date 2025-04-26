@@ -1,9 +1,6 @@
 #include "MyLayer.hpp"
 
-using namespace cocos2d;
-
-using geode::Anchor;
-using geode::AxisAlignment;
+using namespace geode::prelude;
 
 bool MyLayer::init() {
 	if (!CCLayer::init()) return false;
@@ -24,18 +21,18 @@ bool MyLayer::init() {
 
 
 	m_contentLayer = CCLayer::create();
-	m_contentLayer->setLayout(geode::AnchorLayout::create());
+	m_contentLayer->setLayout(AnchorLayout::create());
 	m_contentLayer->setAnchorPoint({0.f, 0.f});
 	this->addChild(m_contentLayer);
 
-	m_scrollLayer = geode::ScrollLayer::create({winSize.width - 150.f, winSize.height - 100.f});
+	m_scrollLayer = ScrollLayer::create({winSize.width - 150.f, winSize.height - 100.f});
 	m_scrollLayer->ignoreAnchorPointForPosition(false);
 	m_contentLayer->addChildAtPosition(m_scrollLayer, Anchor::Center);
 
-	m_scrollbar = geode::Scrollbar::create(m_scrollLayer);
+	m_scrollbar = Scrollbar::create(m_scrollLayer);
 	m_contentLayer->addChildAtPosition(m_scrollbar, Anchor::Right, {-50.f, 0.f});
 
-	m_scrollLayer->m_contentLayer->setLayout(geode::RowLayout::create()
+	m_scrollLayer->m_contentLayer->setLayout(RowLayout::create()
 		->setAxisAlignment(AxisAlignment::Start)
 		->setCrossAxisAlignment(AxisAlignment::End)
 		->setGap(10.f)
@@ -48,7 +45,7 @@ bool MyLayer::init() {
 	if (m_scrollLayer->m_contentLayer->getContentHeight() < m_scrollLayer->getContentHeight()) {
 		auto diff = m_scrollLayer->getContentHeight() - m_scrollLayer->m_contentLayer->getContentHeight();
 		m_scrollLayer->m_contentLayer->setContentHeight(m_scrollLayer->getContentHeight());
-		for (auto child : geode::cocos::CCArrayExt<CCNode*>(m_scrollLayer->m_contentLayer->getChildren()))
+		for (auto child : cocos::CCArrayExt<CCNode*>(m_scrollLayer->m_contentLayer->getChildren()))
 			child->setPositionY(child->getPositionY() + diff);
 	}
 	m_scrollLayer->scrollToTop();
