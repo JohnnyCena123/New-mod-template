@@ -23,6 +23,6 @@ class $modify(MyMenuLayer, MenuLayer) {
 	}
 
 	void onMyLayer(CCObject*) {
-		(void)geode::cocos::switchToScene(MyLayer::create());
+		(void)switchToScene(MyLayer::create());
 	}
 };
