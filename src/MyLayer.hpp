@@ -1,7 +1,7 @@
 #pragma once
 #include <Geode/Geode.hpp>
 
-using namespace prelude;
+using namespace geode::prelude;
 
 class MyLayer : public CCLayer {
 protected:
