@@ -11,10 +11,7 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 project(Template VERSION 1.0.0)
 
 # Set up the mod binary
-file(GLOB SOURCES CONFIGURE_DEPENDS
-    src/*.cpp
-    # Add any extra C++ source files here
-)
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
